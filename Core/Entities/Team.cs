@@ -1,10 +1,9 @@
 ﻿namespace Core.Entities;
 
-public partial class Team
+public partial class Team : BaseEntity
 {
-    public int Id { get; set; }
-
     public string Name { get; set; }
-
-    public ICollection<TeamDriver> TeamsDrivers { get; set; } = new List<TeamDriver>();
+    public ICollection<Driver> Drivers { get; set; } = new HashSet<Driver>();
+    public ICollection<TeamDriver> TeamsDrivers { get; set; }
 }
+    
